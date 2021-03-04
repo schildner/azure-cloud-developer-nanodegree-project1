@@ -1,3 +1,8 @@
 starter-code
 starter-code.zip
 set_env_vars.sh
+
+# Local .terraform directories
+**/.terraform/*
+**/.terraform*
+**/*.plan
