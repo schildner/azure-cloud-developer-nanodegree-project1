@@ -15,7 +15,7 @@ terraform {
   }
 }
 module "resource_group" {
-  source               = "terraform/resource-group"
+  source               = "./terraform/resource-group"
   resource_group       = var.resource_group
   location             = var.location
 }
