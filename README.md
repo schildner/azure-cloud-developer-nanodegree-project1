@@ -7,7 +7,7 @@
    - Contains a user table, an article table, and data in each table
    (populated with the scripts provided in the SQL Scripts folder).
    - Provide a screenshot of the populated tables as detailed further below.
-3. Create a Storage Container in Azure for images to be stored in a container.
+3. Create a Storage Container in Azure for images to be stored in a container. :white_check_mark:
    - Provide a screenshot of the storage endpoint URL as detailed further below.
 4. Add functionality to the Sign In With Microsoft button.
    - This will require completing TODOs in views.py with the msal library, along with appropriate registration in Azure Active Directory.
