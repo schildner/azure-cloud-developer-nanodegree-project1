@@ -20,22 +20,24 @@ module "resource_group" {
   location             = var.location
 }
 
-resource "azurerm_storage_account" "sa" {
-  name                     = "saproject1"
-  resource_group_name      = var.resource_group
-  location                 = var.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
-
-  tags = {
+#resource "azurerm_storage_account" "sa" {
+#  name                     = "saproject1"
+#  resource_group_name      = var.resource_group
+#  location                 = var.location
+#  account_tier             = "Standard"
+#  account_kind             = "StorageV2"
+#  account_replication_type = "LRS"
+#
+#  tags = {
     description = "project1"
-  }
-}
+#  }
+#}
 
-resource "azurerm_storage_container" "cont" {
-  name                  = "cont-project1"
-  storage_account_name  = azurerm_storage_account.sa.name
-}
+#resource "azurerm_storage_container" "cont" {
+#  name                  = "cont-project1"
+#  storage_account_name  = azurerm_storage_account.sa.name
+#  container_access_type = "container"
+#}
 
 resource "azurerm_sql_server" "sqlserver" {
   name                         = "sqlserver-project1"
