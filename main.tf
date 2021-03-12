@@ -26,7 +26,7 @@ module "resource_group" {
 #  account_replication_type = "LRS"
 #
 #  tags = {
-    description = "project1"
+#    description = "project1"
 #  }
 #}
 
