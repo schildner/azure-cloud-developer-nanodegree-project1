@@ -34,3 +34,4 @@ urllib3==1.25.8
 Werkzeug==0.16.1
 WTForms==2.2.1
 pyodbc==4.0.30
+wheel==0.36.2
