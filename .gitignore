@@ -6,3 +6,6 @@ set_env_vars.sh
 **/.terraform/*
 **/.terraform*
 **/*.plan
+
+**/__pycache__/
+flask_session
