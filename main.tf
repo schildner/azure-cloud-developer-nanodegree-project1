@@ -85,3 +85,14 @@ resource "azurerm_sql_database" "db" {
     description = "project1"
   }
 }
+
+resource "azurerm_app_service_plan" "asp" {
+  name                = "udacity-eduard-project1-asp"
+  location            = var.location
+  resource_group_name = module.resource_group.resource_group_name
+
+  sku {
+    tier = "Standard"
+    size = "F1"
+  }
+}
