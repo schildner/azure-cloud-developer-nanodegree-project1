@@ -16,6 +16,17 @@ import uuid
 
 imageSourceUrl = 'https://' + app.config['BLOB_ACCOUNT'] + '.blob.core.windows.net/' + app.config['BLOB_CONTAINER']  + '/'
 
+# Add logging
+logger = logging.getLogger('simple_example')
+logger.setLevel(logging.INFO)
+
+formatter = logging.Formatter("[%(asctime)s] %(levelname)s - %(message)s")
+handler = logging.StreamHandler()
+handler.setLevel(logging.INFO)
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
+
 @app.route('/')
 @app.route('/home')
 @login_required
@@ -67,20 +78,20 @@ def post(id):
 def login():
     if current_user.is_authenticated:
         # user authenticated already:
-        app.logger.info('%s is already authenticated', current_user.username)
+        logger.info('"%s" is already authenticated.', current_user.username)
         return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             # login fail:
-            app.logger.info('%s failed to log in', form.username.data)
+            logger.warn('"%s" failed to log in!', form.username.data)
             flash('Invalid username or password')
             return redirect(url_for('login'))
 
         login_user(user, remember=form.remember_me.data)
         # user logged in successfully:
-        app.logger.info('%s logged in successfully', user.username)
+        logger.info('"%s" logged in successfully.', user.username)
         
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -126,6 +137,7 @@ def authorized():
 @app.route('/logout')
 def logout():
     logout_user()
+    logger.info('User logged out successfully.')
     if session.get("user"): # Used MS Login
         # Wipe out user and its token cache from session
         session.clear()

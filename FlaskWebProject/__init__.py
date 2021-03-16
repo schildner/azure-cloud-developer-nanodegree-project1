@@ -10,7 +10,6 @@ from flask_session import Session
 
 app = Flask(__name__)
 app.config.from_object(Config)
-logging.basicConfig(level=logging.INFO)
 
 Session(app)
 db = SQLAlchemy(app)

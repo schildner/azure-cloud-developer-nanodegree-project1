@@ -5,7 +5,8 @@ az webapp up \
   --location eastus \
   --plan udacity-eduard-project1-asp \
   --sku F1 \
-  --name udacity-eduard-project1-app
+  --name udacity-cloud-developer-project1 \
+  --verbose
 
 az webapp config appsettings set --settings \
   CLIENT_SECRET=$CLIENT_SECRET \

@@ -64,8 +64,8 @@ resource "azurerm_sql_firewall_rule" "fwclientip" {
   name                = "azureaccess"
   resource_group_name = module.resource_group.resource_group_name
   server_name         = azurerm_sql_server.sqlserver.name
-  start_ip_address    = "77.21.83.103" # public ip of my mac
-  end_ip_address      = "77.21.83.103"
+  start_ip_address    = "77.21.83.103" # 52.188.40.144 rejected when accessing running App Service
+  end_ip_address      = "77.21.83.103" # public ip of my mac
 }
 
 resource "azurerm_sql_database" "db" {
@@ -90,7 +90,8 @@ resource "azurerm_app_service_plan" "asp" {
   name                = "udacity-eduard-project1-asp"
   location            = var.location
   resource_group_name = module.resource_group.resource_group_name
-
+  kind                = "Linux"
+  reserved            = true
   sku {
     tier = "Standard"
     size = "F1"
