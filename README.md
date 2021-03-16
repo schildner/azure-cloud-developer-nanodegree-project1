@@ -1,12 +1,14 @@
 # Article CMS (FlaskWebProject)
 
-This project is a Python web application built using Flask. Also implemented is an OAuth2 with "Sign in with Microsoft" using the msal library and app logging.
+This project is a Python web application built using Flask.
 
 The user can log in and out and create/edit articles. An article consists of:
 - title
 - author
 - body of text stored in an Azure SQL Server
 - image stored in Azure Blob Storage
+
+Also implemented is an OAuth2 with "Sign in with Microsoft" button using the msal library and app logging.
 
 ## Project Instructions (For Student)
 
@@ -23,7 +25,7 @@ Task | Done | Description
 7.| :white_check_mark: | Prove that the application is on Azure and working by providing screenshots.
 8.| :white_check_mark: | Log into the Azure Portal, go to your Resource Group, and provide a screenshot including all of the resources that were created to complete this project. (see sample screenshot in "example_images" folder)
 9.| :white_check_mark: | Take a screenshot of the Redirect URIs entered for your registered app, related to the MS Login button.
-10. Take a screenshot of your logs (can be from the Log stream in Azure) showing logging from an attempt to sign in with an invalid login, as well as a valid login.
+10.| | Take a screenshot of your logs (can be from the Log stream in Azure) showing logging from an attempt to sign in with an invalid login, as well as a valid login.
 
 ### Detailed instructions
 
