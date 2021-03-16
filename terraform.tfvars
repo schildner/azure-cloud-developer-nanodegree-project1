@@ -1,3 +1,6 @@
 # Resource Group/Location
-location = "West Europe"
+location = "East US"
 resource_group = "cloud-developer-project1-rg"
+
+storage_account = "saeduardudacity"
+blob = "images"

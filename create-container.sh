@@ -1,11 +1,19 @@
 #!/bin/bash
+RG="cloud-developer-project1-rg"
+LOCATION="eastus"
+SA="saeduardudacity"
+
+az group create \
+  --resource-group $RG \
+  --location $LOCATION
+
 az storage account create \
-  --name saeduardudacity \
-  --resource-group cloud-developer-project1-rg \
-  --location westus2
+  --name $SA \
+  --resource-group $RG \
+  --location $LOCATION
 
 az storage container create \
-  --account-name saeduardudacity \
+  --account-name $SA \
   --name images \
   --auth-mode login \
   --public-access container  

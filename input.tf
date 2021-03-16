@@ -11,3 +11,11 @@ variable "location" {
 variable "resource_group" {
   description = "The resource group for the module's resources."
 }
+
+variable "storage_account" {
+  description = "The storage account name for the blob and the SQL database."
+}
+
+variable "blob" {
+  description = "The blob name for the images."
+}
