@@ -15,7 +15,7 @@ if __name__ == '__main__':
         PORT = 5555
 
     # Add logging
-    formatter = logging.Formatter("[%(asctime)s]%(levelname)s - %(message)s")
+    formatter = logging.Formatter("[%(asctime)s] %(levelname)s - %(message)s")
     handler = RotatingFileHandler('application.log', maxBytes=10000, backupCount=1)
     handler.setLevel(logging.INFO)
     handler.setFormatter(formatter)
