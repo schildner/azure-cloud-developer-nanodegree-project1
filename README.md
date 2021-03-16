@@ -21,7 +21,7 @@ Task | Done | Description
 7.| :white_check_mark: | Prove that the application is on Azure and working by providing screenshots.
 8.| :white_check_mark: | Provide a screenshot including all of the resources created to complete this project.
 9.| :white_check_mark: | Take a screenshot of the Redirect URIs entered for your registered app, related to the MS Login button.
-10.| | Take a screenshot of your logs (can be from the Log stream in Azure) showing logging from an attempt to sign in with an invalid login, as well as a valid login.
+10.| :white_check_mark: | Take a screenshot of your logs (can be from the Log stream in Azure) showing logging from an attempt to sign in with an invalid login, as well as a valid login.
 
 ### Detailed instructions
 
