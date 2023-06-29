@@ -10,7 +10,26 @@
 
 ### App Service vs Virtual Machine
 
-For this project I have chosen App Service. It offers less flexibility and less control than VM but I dont need full control of the infrastructure. My goal is just to run a simple python flask webapp. App Service allows me to focus on my goal without the maintenance / configuration overhead I'd have with VM. The workflow is much simple while the costs are lower with App Service. App Service also guarantees High availability and auto-scaling
+Category | AppService | Virtual Machine
+--- | --- | ---
+**COSTS** | --- | ---
+Super Low Cost | Free F1:  vCPU N/A, 1 GB RAM, max 60mins / day | B1s (1 CPU, 1 GB RAM) 0.01 USD/hour (=8.76 in West Europe region)
+Reasonable HW Example | Tier: "Standard S2". 2 vCPUs 3.5 GB RAM 50 GB storage, scale upto 10 instances: 138 USD/month | Comparable VM: "D2lds_v5" 2 vCPU 4 GB RAM 75 GB storage: 81 USD/month
+Billing | Paying for Active Service Plan even if not running | Paying only for time of running VM
+**FLEXIBILITY** | --- | ---
+Max HW | 14GB RAM 4vCPUs | (almost) any HW money can buy: e.g. M416ms_v2 has 416 vCPUs and 11400 GB RAM
+Scalability | Vertical scaling with no need to redeploy. High Availability & Auto-scaling possible | VMSS can be a nice setup of multiple VMs for AutoScaling option. Or AKS nodepools. 
+Availability | SLA 99.95% for all but Free F1 and Shared D1 | Single instance VMs: 99.9% uptime. Max achievable: 99.99% if multiple VMs configured in Availability Zones
+**WORKFLOW** | --- | ---
+Downsides | Limited configurability (of the webserver "under the hood") | Need to take care of VM updates / image updates etc.
+
+#### I have chosen App Service in this project for the following reasons
+
+1. Downsides acceptable: Less flexibility and less control than VM but I dont need full control of the infrastructure. 
+2. App Service allows me to focus on my goal without the maintenance / configuration overhead I'd have with VM. 
+3. The workflow is much simple
+4. Costs would actually be lower with carefully selected VM size but I'd need to configure a web server: no time. 
+5. Not that I need it but... App Service also guarantees High availability and auto-scaling.
 
 ## Assess app changes that would change your decision
 
